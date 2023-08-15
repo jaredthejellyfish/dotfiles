@@ -14,7 +14,7 @@ BAR_HEIGHT=$(osascript -e 'tell application "System Events" to get the size of t
 
 # Setting up the general bar appearance of the bar
 bar=(
-  height=$BAR_HEIGHT
+  height=$(($BAR_HEIGHT + 3))
   color=$BAR_COLOR
   blur_radius=1000
   border_width=0
@@ -50,14 +50,15 @@ defaults=(
 sketchybar --default "${defaults[@]}"
 
 # Setting up the items
-source "$ITEM_DIR/apple.sh"
-source "$ITEM_DIR/front_app.sh"
+source "$ITEM_DIR/apple/apple.sh"
+source "$ITEM_DIR/front_app/front_app.sh"
 
-source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/calendar/calendar.sh"
 source "$ITEM_DIR/spotlight.sh"
-sketchybar --add alias "Control Center,WiFi" right
+source "$ITEM_DIR/clipboard.sh"
+source "$ITEM_DIR/battery/battery.sh"
 source "$ITEM_DIR/spotify.sh"
-source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/network/network.sh"
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update

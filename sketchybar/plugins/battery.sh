@@ -1,33 +1,50 @@
 #!/bin/bash
 
-source "$CONFIG_DIR/icons.sh"
-source "$CONFIG_DIR/colors.sh"
-
 BATTERY_INFO="$(pmset -g batt)"
 PERCENTAGE=$(echo "$BATTERY_INFO" | grep -Eo "\d+%" | cut -d% -f1)
-CHARGING=$(echo "$BATTERY_INFO" | grep 'AC Power')
+if echo "$BATTERY_INFO" | grep -q "Now drawing from 'AC Power'"; then CHARGING=on; else CHARGING=off; fi
 
 if [ $PERCENTAGE = "" ]; then
   exit 0
 fi
 
-DRAWING=on
-COLOR=$WHITE
-case ${PERCENTAGE} in
-  9[0-9]|100) ICON=􀛨; DRAWING=off
-  ;;
-  [6-8][0-9]) ICON=􀺸; DRAWING=off
-  ;;
-  [3-5][0-9]) ICON=􀺶
-  ;;
-  [1-2][0-9]) ICON=􀛩; COLOR=$ORANGE
-  ;;
-  *) ICON=􀛪; COLOR=$RED
-esac
-
-if [[ $CHARGING != "" ]]; then
-  ICON=􀢋
-  DRAWING=off
+if [[ $CHARGING == "on" ]]; then
+  battery_icon=(
+    icon.drawing=on
+    drawing=on
+    icon="􀢋"
+    label="$PERCENTAGE%"
+  )
+  sketchybar --set battery "${battery_icon[@]}"
+  exit 0
 fi
 
-sketchybar --set $NAME drawing=$DRAWING icon="$ICON" icon.color=$COLOR label="$PERCENTAGE%"
+COLOR=$GREEN
+case ${PERCENTAGE} in
+9[0-9] | 100)
+  ICON=􀛨
+  ;;
+[6-8][0-9])
+  ICON="􀺸"
+  ;;
+[3-5][0-9])
+  ICON="􀺶"
+  ;;
+[1-2][0-9])
+  ICON="􀛩"
+  COLOR=$ORANGE
+  ;;
+*)
+  ICON="􀛪"
+  COLOR=$RED
+  ;;
+esac
+
+battery_icon=(
+  icon.drawing=on
+  drawing=on
+  icon=$ICON
+  label="$PERCENTAGE%"
+)
+
+sketchybar --set battery "${battery_icon[@]}"

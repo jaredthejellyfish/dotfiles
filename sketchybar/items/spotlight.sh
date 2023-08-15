@@ -9,4 +9,3 @@ spotlight=(
 
 sketchybar --add item spotlight right \
   --set spotlight "${spotlight[@]}" \
-  --subscribe calendar system_woke

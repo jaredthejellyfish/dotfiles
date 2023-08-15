@@ -21,7 +21,7 @@ front_app_window=(
   label.padding_left=8
   associated_display=active
   script="$PLUGIN_DIR/front_app_window.sh"
-  update_freq=2
+  update_freq=5
 )
 
 sketchybar --add item front_app left \

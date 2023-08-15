@@ -57,8 +57,11 @@ source "$ITEM_DIR/calendar/calendar.sh"
 source "$ITEM_DIR/spotlight.sh"
 source "$ITEM_DIR/clipboard.sh"
 source "$ITEM_DIR/battery/battery.sh"
-source "$ITEM_DIR/spotify.sh"
+source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/network/network.sh"
+
+source "$ITEM_DIR/spotify/spotify.sh"
+source "$ITEM_DIR/mic/mic.sh"
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update

@@ -14,12 +14,13 @@ if [[ $CHARGING == "on" ]]; then
     drawing=on
     icon="􀢋"
     label="$PERCENTAGE%"
+    icon.color=0xffffffff
   )
   sketchybar --set battery "${battery_icon[@]}"
   exit 0
 fi
 
-COLOR=$GREEN
+COLOR=$WHITE
 case ${PERCENTAGE} in
 9[0-9] | 100)
   ICON=􀛨
@@ -32,19 +33,19 @@ case ${PERCENTAGE} in
   ;;
 [1-2][0-9])
   ICON="􀛩"
-  COLOR=$ORANGE
+  COLOR=0xfff5a97f
   ;;
 *)
   ICON="􀛪"
-  COLOR=$RED
+  COLOR=0xffed8796
   ;;
 esac
 
 battery_icon=(
   icon.drawing=on
-  drawing=on
   icon=$ICON
   label="$PERCENTAGE%"
+  icon.color=$COLOR
 )
 
 sketchybar --set battery "${battery_icon[@]}"

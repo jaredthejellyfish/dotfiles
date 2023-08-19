@@ -31,7 +31,7 @@ yabai -m config window_shadow off
 
 # general space settings
 yabai -m config layout bsp
-yabai -m config top_padding 8
+yabai -m config top_padding 0
 yabai -m config bottom_padding 4
 yabai -m config left_padding 2
 yabai -m config right_padding 2
@@ -39,6 +39,7 @@ yabai -m config window_gap 2
 
 # apps to not manage (ignore)
 yabai -m rule --add app="^Spotify$" manage=off sticky=on
+yabai -m rule --add app="^Simulator$" manage=off sticky=on
 yabai -m rule --add app="^System Settings$" sticky=on manage=off
 yabai -m rule --add app="Stats" sticky=on manage=off
 yabai -m rule --add app="Calculator" sticky=on manage=off

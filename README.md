@@ -6,8 +6,9 @@
 
 - <kbd>alt + v</kbd> : Open Visual Studio Code
 ### cmd + ...
-- <kbd>cmd + alt + c      </kbd> : Center window on screen and float it
+- <kbd>cmd + alt + c      </kbd> : Toggle float on focused window
 
+- <kbd>cmd + alt + c      </kbd> : Center window on screen and float it
 - <kbd>cmd + alt + accent2</kbd> : Switch focus to previous space
 - <kbd>cmd + alt + ç      </kbd> : Switch focus to next space
 - <kbd>cmd + alt + n      </kbd> : Swap focused window with window under mouse

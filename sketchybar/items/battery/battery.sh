@@ -6,8 +6,9 @@ battery=(
   updates=on
   icon.font="SF Pro:Regular:17.0"
   label.font="$FONT:Semibold:13.0"
-  label.drawing=no
-  padding_right=13
+  label.drawing=yes
+  padding_right=24
+  y_offset=1
   label.padding_left=8
   click_script="sketchybar --set battery label.drawing=toggle"
 )

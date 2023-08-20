@@ -9,7 +9,7 @@ spotify_anchor=(
   popup.horizontal=on
   popup.height=130
   icon=󰓇
-  icon.font="$ICONS_FONT:Regular:20.0"
+  icon.font="$ICONS_FONT:Regular:18.0"
   label.drawing=off
   label="Not playing..."
   icon.color=0xc9ffffff
@@ -20,9 +20,9 @@ spotify_anchor=(
   background.color=0xff393939
   background.drawing=on
   background.corner_radius=4
-  background.height=28
-  icon.padding_left=6
-  icon.padding_right=5
+  background.height=25
+  icon.padding_left=4
+  icon.padding_right=3
   label.padding_right=8
 )
 

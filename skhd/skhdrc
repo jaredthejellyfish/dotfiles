@@ -1,3 +1,4 @@
+
 alt - b: open -a "Brave Browser" -n # Open Brave Browser
 alt - v: osascript -e 'tell application "Visual Studio Code" to activate' # Open Visual Studio Code
 alt - s: osascript -e 'tell application "Spotify" to activate' # Open Spotify

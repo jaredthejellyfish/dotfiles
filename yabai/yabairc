@@ -31,11 +31,11 @@ yabai -m config window_shadow off
 
 # general space settings
 yabai -m config layout bsp
-yabai -m config top_padding 0
-yabai -m config bottom_padding 4
-yabai -m config left_padding 2
-yabai -m config right_padding 2
-yabai -m config window_gap 2
+yabai -m config top_padding 15
+yabai -m config bottom_padding 30
+yabai -m config left_padding 20
+yabai -m config right_padding 20
+yabai -m config window_gap 7
 
 # apps to not manage (ignore)
 yabai -m rule --add app="^Spotify$" manage=off sticky=off

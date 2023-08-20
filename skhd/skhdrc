@@ -22,3 +22,4 @@ cmd + alt - 0x27: yabai -m space --focus prev # Switch focus to previous space
 
 cmd + alt - c: yabai -m window --toggle float; yabai -m window --grid 7:7:1:1:5:5 # Center window on screen and float it
 cmd + alt - f: yabai -m window --toggle float; # Toggle float on focused window
+cmd + alt - x: yabai -m space --toggle padding ; yabai -m space --toggle gap # Toggle padding and gap on current space

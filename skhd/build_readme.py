@@ -3,10 +3,11 @@ import re
 
 keymap = {
     "0x29": "ñ",
-    "0x2F": "period",
-    "0x2B": "comma",
+    "0x2F": ".",
+    "0x2B": ",",
     "0x2A": "ç",
-    "0x27": "accent2",
+    "0x27": "´",
+    "0x14": "3",
 }
 
 
@@ -50,24 +51,26 @@ def write_to_readme(keybinds: dict):
 
         # Insert the new keybinds section
         lines.insert(start, "## Keybinds\n")
+        start += 1
         for key, keybinds in keybinds.items():
-            lines.insert(start + 1, f"### {key} + ...\n")
+            lines.insert(start, f"### {key} + ...\n")
+            start += 1
             max_keybind_length = max(
                 len(" + ".join(keybind["keybind"])) for keybind in keybinds
             )
             for keybind in keybinds:
                 padding = max_keybind_length - len(" + ".join(keybind["keybind"]))
                 lines.insert(
-                    start + 2,
+                    start,
                     f"- <kbd>{' + '.join(keybind['keybind'])}{' ' * padding}</kbd> : {keybind['action']}\n",
                 )
-            lines.insert(start + 3, "\n")
-            start += 4
+                start += 1
+            lines.insert(start, "\n")
+            start += 1
 
     # Write the new readme file
     with open(os.path.expanduser("~/.config/README.md"), "w") as f:
         f.writelines(lines)
-
 
 # Open the skhdrc file
 with open(os.path.expanduser("~/.config/skhd/skhdrc"), "r") as f:

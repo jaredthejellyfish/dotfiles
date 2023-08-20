@@ -20,23 +20,23 @@ if [[ $CHARGING == "on" ]]; then
   exit 0
 fi
 
-COLOR=$WHITE
+COLOR=0xffffffff
 case ${PERCENTAGE} in
 9[0-9] | 100)
   ICON=􀛨
   ;;
 [6-8][0-9])
-  ICON="􀺸"
+  ICON=􀺸
   ;;
 [3-5][0-9])
-  ICON="􀺶"
+  ICON=􀺶
   ;;
 [1-2][0-9])
-  ICON="􀛩"
+  ICON=􀛩
   COLOR=0xfff5a97f
   ;;
 *)
-  ICON="􀛪"
+  ICON=􀛪
   COLOR=0xffed8796
   ;;
 esac

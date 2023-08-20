@@ -20,5 +20,5 @@ cmd + alt - n: yabai -m window --swap mouse # Swap focused window with window un
 cmd + alt - 0x2A: yabai -m space --focus next # Switch focus to next space
 cmd + alt - 0x27: yabai -m space --focus prev # Switch focus to previous space
 
-cmd + alt - c: yabai -m window --toggle float; yabai -m window --grid 4:4:1:1:2:2 # Center window on screen and float it
+cmd + alt - c: yabai -m window --toggle float; yabai -m window --grid 7:7:1:1:5:5 # Center window on screen and float it
 cmd + alt - f: yabai -m window --toggle float; # Toggle float on focused window

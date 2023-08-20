@@ -50,5 +50,6 @@ yabai -m rule --add app="^Activity Monitor$" sticky=on manage=off
 yabai -m rule --add app="^iStat Menus Status$" manage=off
 yabai -m rule --add app="^Adobe Photoshop (Beta)$" manage=off
 yabai -m rule --add app="^console$" manage=off
+yabai -m rule --add app="^Malwarebytes$" manage=off
 
 echo "yabai configuration loaded.."

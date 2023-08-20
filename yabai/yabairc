@@ -38,7 +38,7 @@ yabai -m config right_padding 2
 yabai -m config window_gap 2
 
 # apps to not manage (ignore)
-yabai -m rule --add app="^Spotify$" manage=off sticky=on
+yabai -m rule --add app="^Spotify$" manage=off sticky=off
 yabai -m rule --add app="^Simulator$" manage=off sticky=on
 yabai -m rule --add app="^System Settings$" sticky=on manage=off
 yabai -m rule --add app="Stats" sticky=on manage=off

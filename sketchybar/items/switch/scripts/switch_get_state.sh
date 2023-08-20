@@ -7,7 +7,7 @@ source "$ENV_DIR/.env"
 result=$(curl -s \
   -H "Authorization: Bearer $HOME_ASSISTANT_API_KEY" \
   -H "Content-Type: application/json" \
-  https://3c1bxumldeemc2fhbplo5mky3erdm8z2.ui.nabu.casa/api/states/switch.office_grow_light)
+  $HOME_ASSISTANT_URL/api/states/switch.office_grow_light)
 
 if [[ $(echo "$result" | jq -r '.state') == "on" ]]; then
   sketchybar -m --set switch icon.color=0xffff9024

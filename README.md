@@ -1,5 +1,5 @@
 # dotfiles
-## File Structure Overview:
+
 **Dotfiles Repository Description**
 
 Welcome to my dotfiles repository! This is where I store and manage all my personalized configuration files and scripts for various tools and applications on my system. Dotfiles are the hidden files in a user's home directory that are used to customize and enhance their computing environment. Here's a breakdown of what you can find in this repository:
@@ -35,14 +35,6 @@ Welcome to my dotfiles repository! This is where I store and manage all my perso
   - **helper:** Helper scripts and source files.
 
   - **plugins:** Homemade SketchyBar plugins.
-
-**Node.js and Yarn Global Packages:**
-
-- **yarn:** Global Yarn packages for Node.js.
-
-  - **global:** Global package.json and yarn.lock files.
-
-  - **link:** Symbolic links to other directories.
 
 This repository is a treasure trove of customized configurations, scripts, and utilities that can help you optimize and personalize your computing experience. Feel free to explore and adapt these dotfiles to suit your preferences. Enjoy the enhanced functionality and efficiency they bring to your system!
 

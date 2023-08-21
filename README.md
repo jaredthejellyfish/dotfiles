@@ -1,5 +1,5 @@
 # dotfiles
-
+## File Structure Overview:
 **Dotfiles Repository Description**
 
 Welcome to my dotfiles repository! This is where I store and manage all my personalized configuration files and scripts for various tools and applications on my system. Dotfiles are the hidden files in a user's home directory that are used to customize and enhance their computing environment. Here's a breakdown of what you can find in this repository:
@@ -12,11 +12,7 @@ Welcome to my dotfiles repository! This is where I store and manage all my perso
 
 - **yabai:** Configuration files for Yabai, a tiling window manager for macOS.
 
-**File Structure Overview:**
-
-- **README.md:** This documentation file, providing an overview of the repository and its contents.
-
-- \***\*pycache**:\*\* A Python cache directory, storing compiled Python files for faster execution.
+**README.md:** This documentation file, providing an overview of the repository and its contents.
 
 **Fish Shell Configuration:**
 

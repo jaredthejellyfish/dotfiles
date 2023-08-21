@@ -19,68 +19,8 @@ keymap = {
     "0x14": "3",
 }
 
-sample_gpt_response = """## Keybinds
-
-### Application Launch Keybinds
-
-<kbd>alt + b</kbd> : Open Brave Browser
-
-<kbd>alt + v</kbd> : Open Visual Studio Code
-
-<kbd>alt + s</kbd> : Open Spotify
-
-### Window Focus Keybinds
-
-#### Switch Focus
-
-<kbd>cmd + alt + p</kbd> : Switch focus to window below
-
-<kbd>cmd + alt + o</kbd> : Switch focus to window above
-
-<kbd>cmd + alt + ñ</kbd> : Switch focus to the most recently focused window
-
-<kbd>cmd + alt + l</kbd> : Switch focus to window on the right
-
-<kbd>cmd + alt + k</kbd> : Switch focus to window on the left
-
-#### Switch Space
-
-<kbd>cmd + alt + ç</kbd> : Switch focus to next space
-
-<kbd>cmd + alt + ´</kbd> : Switch focus to previous space
-
-### Window Manipulation Keybinds
-
-#### Warp Window
-
-<kbd>cmd + alt + h</kbd> : Warp focused window to the left
-
-<kbd>cmd + alt + j</kbd> : Warp focused window to the bottom
-
-#### Window Arrangement
-
-<kbd>cmd + alt + .</kbd> : Balance space windows
-
-<kbd>cmd + alt + ,</kbd> : Mirror current space along the y-axis
-
-<kbd>cmd + alt + m</kbd> : Rotate space 180 degrees and retain focused window
-
-<kbd>cmd + alt + n</kbd> : Swap focused window with window under mouse
-
-#### Window Positioning
-
-<kbd>cmd + alt + c</kbd> : Center window on screen and float it
-
-<kbd>cmd + alt + f</kbd> : Toggle float on focused window
-
-<kbd>cmd + alt + x</kbd> : Toggle padding and gap on current space
-
-<kbd>cmd + alt + w</kbd> : Set currently focused window ratio to 68% of screen width
-"""
-
 
 def generate_keybinds_section(keybinds: dict):
-    return sample_gpt_response
     prompt = "\n".join(keybinds)
 
     prompt = f"## Keybinds\n\n{prompt}\n\n"

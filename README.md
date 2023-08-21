@@ -48,7 +48,7 @@ This repository is a treasure trove of customized configurations, scripts, and u
 
 <kbd>alt + s</kbd> : Open Spotify
 
-### Window Focus Keybinds
+### Window Navigation Keybinds
 
 #### Switch Focus
 
@@ -62,31 +62,19 @@ This repository is a treasure trove of customized configurations, scripts, and u
 
 <kbd>cmd + alt + k</kbd> : Switch focus to window on the left
 
-#### Switch Space
-
 <kbd>cmd + alt + ç</kbd> : Switch focus to next space
 
 <kbd>cmd + alt + ´</kbd> : Switch focus to previous space
 
-### Window Manipulation Keybinds
-
-#### Warp Window
+#### Window Manipulation
 
 <kbd>cmd + alt + h</kbd> : Warp focused window to the left
 
 <kbd>cmd + alt + j</kbd> : Warp focused window to the bottom
 
-#### Window Arrangement
-
-<kbd>cmd + alt + .</kbd> : Balance space windows
-
-<kbd>cmd + alt + ,</kbd> : Mirror current space along the y-axis
-
 <kbd>cmd + alt + m</kbd> : Rotate space 180 degrees and retain focused window
 
 <kbd>cmd + alt + n</kbd> : Swap focused window with window under mouse
-
-#### Window Positioning
 
 <kbd>cmd + alt + c</kbd> : Center window on screen and float it
 
@@ -95,6 +83,12 @@ This repository is a treasure trove of customized configurations, scripts, and u
 <kbd>cmd + alt + x</kbd> : Toggle padding and gap on current space
 
 <kbd>cmd + alt + w</kbd> : Set currently focused window ratio to 68% of screen width
+
+### Space Management Keybinds
+
+<kbd>cmd + alt + .</kbd> : Balance space windows
+
+<kbd>cmd + alt + ,</kbd> : Mirror current space along the y-axis
 
 Author: Gerard Hernandez (@jaredthejellyfish)
 Contact: ger.almenara@gmail.com

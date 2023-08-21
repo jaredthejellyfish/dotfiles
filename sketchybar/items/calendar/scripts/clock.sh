@@ -10,8 +10,8 @@ last_number=${current_time: -1}
 if (( $last_number % 2 != 0 ))
 then
     # Replace colons with empty unicode characters
-    current_time=${current_time//:/' '}
+    current_time=${current_time//:/"'"}
 fi
 
 # Run the SketchyBar command
-sketchybar --set calendar.clock icon="$current_time" label=""
+sketchybar --set clock label="$current_time"

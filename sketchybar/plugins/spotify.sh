@@ -18,9 +18,9 @@ update() {
 
   #If it is playing then we need to run some sketchybar commands
   if [ "$PLAYING" = "0" ]; then
-    sketchybar -m --set spotify.anchor icon.color=0xff1ed761 label="$label" label.drawing=on
+    sketchybar -m --set spotify.anchor icon.color=0xff1ed761 label="$label" label.drawing=on background.color=0x39393939
     sleep 1
-    sketchybar -m --set spotify.anchor icon.color=0xff1ed761 label="$label" label.drawing=off
+    sketchybar -m --set spotify.anchor icon.color=0xff1ed761 label="$label" label.drawing=off background.color=0x03393939
   fi
 
   if [ "$PLAYING" = "1" ]; then
@@ -38,10 +38,10 @@ case "$SENDER" in
   osascript -e 'tell application "Spotify" to playpause'
   ;;
 "mouse.entered")
-   sketchybar -m --set spotify.anchor label.drawing=on
+   sketchybar -m --set spotify.anchor label.drawing=on blur_radius=90
   ;;
 "mouse.exited")
-   sketchybar -m --set spotify.anchor label.drawing=off
+   sketchybar -m --set spotify.anchor label.drawing=off blur_radius=3
   ;;
 "forced")
   exit 0

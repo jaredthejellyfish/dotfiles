@@ -9,6 +9,7 @@ front_app=(
   associated_display=active
   script="$FRONT_APP_SCRIPT"
   click_script="$PLUGIN_DIR/front_app.sh"
+  y_offset=-1
 )
 
 front_app_window=(
@@ -22,6 +23,7 @@ front_app_window=(
   associated_display=active
   script="$PLUGIN_DIR/front_app_window.sh"
   update_freq=5
+
 )
 
 sketchybar --add item front_app left \

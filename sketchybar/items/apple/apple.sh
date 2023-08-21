@@ -5,6 +5,8 @@ apple_logo=(
   label.drawing=off
   click_script="$POPUP_CLICK_SCRIPT"
   popup.height=35
+  padding_left=3
+  y_offset=-1
 )
 
 

@@ -40,45 +40,61 @@ This repository is a treasure trove of customized configurations, scripts, and u
 
 ## Keybinds
 
-### Application Shortcuts
+### Application Launch Keybinds
 
-- <kbd>alt + b</kbd> : Open Brave Browser
-- <kbd>alt + v</kbd> : Open Visual Studio Code
-- <kbd>alt + s</kbd> : Open Spotify
+<kbd>alt + b</kbd> : Open Brave Browser
 
-### Window Navigation
+<kbd>alt + v</kbd> : Open Visual Studio Code
 
-- <kbd>cmd + alt + p</kbd> : Switch focus to window below
-- <kbd>cmd + alt + o</kbd> : Switch focus to window above
-- <kbd>cmd + alt + l</kbd> : Switch focus to window on the right
-- <kbd>cmd + alt + k</kbd> : Switch focus to window on the left
+<kbd>alt + s</kbd> : Open Spotify
 
-### Monitor and Space Navigation
+### Window Focus Keybinds
 
-- <kbd>cmd + alt + ñ</kbd> : Switch focus to previous monitor
-- <kbd>cmd + alt + ç</kbd> : Switch focus to next space
-- <kbd>cmd + alt + ´</kbd> : Switch focus to previous space
+#### Switch Focus
 
-### Window Manipulation
+<kbd>cmd + alt + p</kbd> : Switch focus to window below
 
-- <kbd>cmd + alt + h</kbd> : Warp focused window to the left
-- <kbd>cmd + alt + j</kbd> : Warp focused window to the bottom
-- <kbd>cmd + alt + m</kbd> : Rotate space 180 degrees and retain focused window
-- <kbd>cmd + alt + n</kbd> : Swap focused window with window under mouse
-- <kbd>cmd + alt + c</kbd> : Center window on screen and float it
-- <kbd>cmd + alt + f</kbd> : Toggle float on focused window
+<kbd>cmd + alt + o</kbd> : Switch focus to window above
 
-### Space Manipulation
+<kbd>cmd + alt + ñ</kbd> : Switch focus to the most recently focused window
 
-- <kbd>cmd + alt + .</kbd> : Balance space windows
-- <kbd>cmd + alt + ,</kbd> : Mirror current space along the y-axis
-- <kbd>cmd + alt + x</kbd> : Toggle padding and gap on current space
+<kbd>cmd + alt + l</kbd> : Switch focus to window on the right
 
-### Space Management
+<kbd>cmd + alt + k</kbd> : Switch focus to window on the left
 
-- <kbd>cmd + alt + .</kbd> : Balance space windows
-- <kbd>cmd + alt + ,</kbd> : Mirror current space along the y-axis
-- <kbd>cmd + alt + x</kbd> : Toggle padding and gap on current space
+#### Switch Space
+
+<kbd>cmd + alt + ç</kbd> : Switch focus to next space
+
+<kbd>cmd + alt + ´</kbd> : Switch focus to previous space
+
+### Window Manipulation Keybinds
+
+#### Warp Window
+
+<kbd>cmd + alt + h</kbd> : Warp focused window to the left
+
+<kbd>cmd + alt + j</kbd> : Warp focused window to the bottom
+
+#### Window Arrangement
+
+<kbd>cmd + alt + .</kbd> : Balance space windows
+
+<kbd>cmd + alt + ,</kbd> : Mirror current space along the y-axis
+
+<kbd>cmd + alt + m</kbd> : Rotate space 180 degrees and retain focused window
+
+<kbd>cmd + alt + n</kbd> : Swap focused window with window under mouse
+
+#### Window Positioning
+
+<kbd>cmd + alt + c</kbd> : Center window on screen and float it
+
+<kbd>cmd + alt + f</kbd> : Toggle float on focused window
+
+<kbd>cmd + alt + x</kbd> : Toggle padding and gap on current space
+
+<kbd>cmd + alt + w</kbd> : Set currently focused window ratio to 68% of screen width
 
 Author: Gerard Hernandez (@jaredthejellyfish)
 Contact: ger.almenara@gmail.com

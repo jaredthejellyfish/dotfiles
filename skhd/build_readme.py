@@ -2,6 +2,9 @@ import os
 import re
 import openai
 from dotenv import load_dotenv
+from pprint import pprint
+
+print = pprint
 
 load_dotenv()
 
@@ -16,44 +19,71 @@ keymap = {
     "0x14": "3",
 }
 
-sample_keybinds = """## Keybinds
+sample_gpt_response = """## Keybinds
 
-### Application Shortcuts
+### Application Launch Keybinds
 
-- <kbd>alt + b</kbd> : Open Brave Browser
-- <kbd>alt + v</kbd> : Open Visual Studio Code
-- <kbd>alt + s</kbd> : Open Spotify
+<kbd>alt + b</kbd> : Open Brave Browser
 
-### Window Navigation
+<kbd>alt + v</kbd> : Open Visual Studio Code
 
-#### Switching Focus
+<kbd>alt + s</kbd> : Open Spotify
 
-- <kbd>cmd + alt + p</kbd> : Switch focus to window below
-- <kbd>cmd + alt + o</kbd> : Switch focus to window above
-- <kbd>cmd + alt + ñ</kbd> : Switch focus to previous monitor
-- <kbd>cmd + alt + l</kbd> : Switch focus to window on the right
-- <kbd>cmd + alt + k</kbd> : Switch focus to window on the left
-- <kbd>cmd + alt + ç</kbd> : Switch focus to next space
-- <kbd>cmd + alt + ´</kbd> : Switch focus to previous space
+### Window Focus Keybinds
 
-#### Window Manipulation
+#### Switch Focus
 
-- <kbd>cmd + alt + h</kbd> : Warp focused window to the left
-- <kbd>cmd + alt + j</kbd> : Warp focused window to the bottom
-- <kbd>cmd + alt + m</kbd> : Rotate space 180 degrees and retain focused window
-- <kbd>cmd + alt + n</kbd> : Swap focused window with window under mouse
-- <kbd>cmd + alt + c</kbd> : Center window on screen and float it
-- <kbd>cmd + alt + f</kbd> : Toggle float on focused window
+<kbd>cmd + alt + p</kbd> : Switch focus to window below
 
-### Space Management
+<kbd>cmd + alt + o</kbd> : Switch focus to window above
 
-- <kbd>cmd + alt + .</kbd> : Balance space windows
-- <kbd>cmd + alt + ,</kbd> : Mirror current space along the y-axis
-- <kbd>cmd + alt + x</kbd> : Toggle padding and gap on current space"""
+<kbd>cmd + alt + ñ</kbd> : Switch focus to the most recently focused window
+
+<kbd>cmd + alt + l</kbd> : Switch focus to window on the right
+
+<kbd>cmd + alt + k</kbd> : Switch focus to window on the left
+
+#### Switch Space
+
+<kbd>cmd + alt + ç</kbd> : Switch focus to next space
+
+<kbd>cmd + alt + ´</kbd> : Switch focus to previous space
+
+### Window Manipulation Keybinds
+
+#### Warp Window
+
+<kbd>cmd + alt + h</kbd> : Warp focused window to the left
+
+<kbd>cmd + alt + j</kbd> : Warp focused window to the bottom
+
+#### Window Arrangement
+
+<kbd>cmd + alt + .</kbd> : Balance space windows
+
+<kbd>cmd + alt + ,</kbd> : Mirror current space along the y-axis
+
+<kbd>cmd + alt + m</kbd> : Rotate space 180 degrees and retain focused window
+
+<kbd>cmd + alt + n</kbd> : Swap focused window with window under mouse
+
+#### Window Positioning
+
+<kbd>cmd + alt + c</kbd> : Center window on screen and float it
+
+<kbd>cmd + alt + f</kbd> : Toggle float on focused window
+
+<kbd>cmd + alt + x</kbd> : Toggle padding and gap on current space
+
+<kbd>cmd + alt + w</kbd> : Set currently focused window ratio to 68% of screen width
+"""
 
 
 def generate_keybinds_section(keybinds: dict):
+    return sample_gpt_response
     prompt = "\n".join(keybinds)
+
+    prompt = f"## Keybinds\n\n{prompt}\n\n"
 
     response = openai.ChatCompletion.create(
         model="gpt-4",
@@ -76,104 +106,65 @@ def generate_keybinds_section(keybinds: dict):
 
     return response.choices[0].message.content
 
+    # with open(os.path.expanduser("~/.config/README.md"), "r") as f:
+    #     lines = f.readlines()
 
-def print_keys(keybinds: dict):
-    # Print the keybinds in Markdown format
-    print("## Keybinds")
-    for key, keybinds in keybinds.items():
-        print(f"### {key} + ...")
-        max_keybind_length = max(
-            len(" + ".join(keybind["keybind"])) for keybind in keybinds
-        )
-        for keybind in keybinds:
-            padding = max_keybind_length - len(" + ".join(keybind["keybind"]))
-            print(
-                f"- <kbd>{' + '.join(keybind['keybind'])}{' ' * padding}</kbd> : {keybind['action']}",
-            )
-        print("## keybinds")
+    # keybinds_section = generate_keybinds_section(keybinds_list)
+    # with open(os.path.expanduser("~/.config/README.md"), "w") as f:
+    #     f.writelines(lines_start)
 
-
-def write_to_readme(keybinds: dict):
-    # Open the readme file
-    with open(os.path.expanduser("~/.config/README.md"), "r") as f:
-        lines = f.readlines()
-
-        print(len(lines))
-
-        # Find the start of the keybinds section
-        start = None
-        for i, line in enumerate(lines):
-            if line.startswith("## Keybinds"):
-                start = i
-                break
-
-        # start from the end of the file backwards and remove all lines until the end of the keybinds section which will the the first line to start with "- <kbd>"
-        end = len(lines)
-        for i, line in reversed(list(enumerate(lines))):
-            if line.find("- <kbd>"):
-                end = i
-                break
-
-        # Remove the old keybinds section
-        lines_start = lines[:start]
-        lines_end = lines[end - (start -1) :]
-
-        keybinds_list = []
-
-        # Insert the new keybinds section
-        keybinds_list.insert(start, "## Keybinds\n")
-        start += 1
-        for _, keybinds in keybinds.items():
-            start += 1
-            max_keybind_length = max(
-                len(" + ".join(keybind["keybind"])) for keybind in keybinds
-            )
-            for keybind in keybinds:
-                padding = max_keybind_length - len(" + ".join(keybind["keybind"]))
-                keybinds_list.insert(
-                    start,
-                    f"- <kbd>{' + '.join(keybind['keybind'])}{' ' * padding}</kbd> : {keybind['action']}\n",
-                )
-                start += 1
-            start += 1
-
-    keybinds_section = generate_keybinds_section(keybinds_list)
-    with open(os.path.expanduser("~/.config/README.md"), "w") as f:
-        f.writelines(lines_start)
-
-        f.write(keybinds_section)
-        f.writelines(["\n"] + lines_end)
 
 # Open the skhdrc file
 with open(os.path.expanduser("~/.config/skhd/skhdrc"), "r") as f:
-    lines = f.readlines()
+    skhd_lines = f.readlines()
     # Remove empty lines and comments
-    lines = [
+    skhd_lines = [
         {
             "keybind": re.split(r"\s*[+-]\s*", line.split(":")[0]),
             "action": line.split("#")[-1].strip(),
         }
-        for line in lines
+        for line in skhd_lines
         if line.strip() and not line.startswith("#")
     ]
 
     # Replace key names with their corresponding values from the keymap
-    for entry in lines:
+    for entry in skhd_lines:
         for i, key in enumerate(entry["keybind"]):
             if key in keymap:
                 entry["keybind"][i] = keymap[key]
 
     # Sort the keybinds by their first key
-    lines = sorted(lines, key=lambda x: x["keybind"][0])
+    skhd_lines = sorted(skhd_lines, key=lambda x: x["keybind"][0])
 
-    # Group the keybinds by their first key
+    formatted_keybinds = []
+    for bind in skhd_lines:
+        keys = " + ".join(bind["keybind"])
+        formatted_keybinds.append("<kbd>{}</kbd> : {}".format(keys, bind["action"]))
 
-    keybinds = {}
-    for entry in lines:
-        key = entry["keybind"][0]
-        if key not in keybinds:
-            keybinds[key] = []
-        keybinds[key].append(entry)
+    keybinds = generate_keybinds_section(formatted_keybinds)
 
-    # print_keys(keybinds)
-    write_to_readme(keybinds)
+    with open(os.path.expanduser("~/.config/README.md"), "r") as f:
+        readme_lines = f.readlines()
+
+        # find the first occurence of "## Keybinds"
+        keybinds_start = readme_lines.index("## Keybinds\n")
+
+        # find the last occurence of "</kbd> :"
+
+        keybinds_end = [
+            i
+            for i, line in enumerate(readme_lines)
+            if "</kbd> :" in line and i > keybinds_start
+        ][-1]
+
+        # replace the keybinds section with the new keybinds
+        readme_lines = (
+            readme_lines[: keybinds_start]
+            + [keybinds]
+            + readme_lines[keybinds_end + 1:]
+        )
+
+        with open(os.path.expanduser("~/.config/README.md"), "w") as f:
+            f.writelines(readme_lines)
+
+            exit(0)

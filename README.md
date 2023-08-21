@@ -38,7 +38,7 @@ Welcome to my dotfiles repository! This is where I store and manage all my perso
 
   - **helper:** Helper scripts and source files.
 
-  - **plugins:** Deprecated SketchyBar plugins.
+  - **plugins:** Homemade SketchyBar plugins.
 
 **Node.js and Yarn Global Packages:**
 

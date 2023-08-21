@@ -84,12 +84,6 @@ This repository is a treasure trove of customized configurations, scripts, and u
 - <kbd>cmd + alt + .</kbd> : Balance space windows
 - <kbd>cmd + alt + ,</kbd> : Mirror current space along the y-axis
 - <kbd>cmd + alt + x</kbd> : Toggle padding and gap on current space
-  - **helper:** Helper scripts and source files.
-
-  - **plugins:** Deprecated SketchyBar plugins.
-
-**Node.js and Yarn Global Packages:**
-
 - **yarn:** Global Yarn packages for Node.js.
 
   - **global:** Global package.json and yarn.lock files.
@@ -139,3 +133,6 @@ This repository is a treasure trove of customized configurations, scripts, and u
 - <kbd>cmd + alt + .</kbd> : Balance space windows
 - <kbd>cmd + alt + ,</kbd> : Mirror current space along the y-axis
 - <kbd>cmd + alt + x</kbd> : Toggle padding and gap on current space
+
+Author: Gerard Hernandez (@jaredthejellyfish)
+Contact: ger.almenara@gmail.com

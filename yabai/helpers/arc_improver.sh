@@ -1,12 +1,6 @@
 #!/bin/bash
 
-current=$YABAI_PROCESS_ID
-recent=$YABAI_RECENT_PROCESS_ID
-
 all_windows=$(yabai -m query --windows)
-
-current_app=$(echo $all_windows | jq -r ".[] | select(.pid == $current) | .app")
-recent_app=$(echo $all_windows | jq -r ".[] | select(.pid == $recent) | .app")
 
 arc_running=$(echo $all_windows | jq -r '.[] | .app' | grep -c "Arc")
 if [[ $arc_running == 0 ]]; then

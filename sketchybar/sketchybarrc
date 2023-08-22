@@ -56,6 +56,7 @@ source "$ITEM_DIR/front_app/front_app.sh"
 source "$ITEM_DIR/calendar/calendar.sh"
 source "$ITEM_DIR/battery/battery.sh"
 source "$ITEM_DIR/wifi.sh"
+source "$ITEM_DIR/wakatime/wakatime.sh"
 
 source "$ITEM_DIR/spotify/spotify.sh"
 source "$ITEM_DIR/switch/switch.sh"

@@ -8,7 +8,6 @@ battery=(
   label.font="$FONT:Semibold:12.0"
   label.drawing=yes
   padding_right=10
-
   label.padding_left=8
   click_script="sketchybar --set battery label.drawing=toggle"
 )

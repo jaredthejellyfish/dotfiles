@@ -10,7 +10,7 @@ yabai -m signal --add event=application_front_switched \
 sudo yabai --load-sa
 
 # global settings
-yabai -m config mouse_follows_focus on
+yabai -m config mouse_follows_focus off
 yabai -m config focus_follows_mouse autoraise
 yabai -m config window_origin_display default
 yabai -m config window_placement second_child
@@ -45,7 +45,6 @@ yabai -m config window_gap 7
 # app specific settings:
 yabai -m rule --add app="Code" opacity=0.90
 yabai -m rule --add app="Warp" opacity=0.83
-yabai -m rule --add app="^Arc.*" border="off"
 
 # apps to not manage (ignore)
 yabai -m rule --add app="^Spotify$" manage=off sticky=off
@@ -57,7 +56,7 @@ yabai -m rule --add app="^Finder$" sticky=off manage=off
 yabai -m rule --add app="^Disk Utility$" sticky=on manage=off
 yabai -m rule --add app="^System Information$" sticky=on manage=off
 yabai -m rule --add app="^Activity Monitor$" sticky=on manage=off
-yabai -m rule --add app="^iStat Menus Status$" manage=off
+yabai -m rule --add app="^iStat Menus.*$" manage=off
 yabai -m rule --add app="^Adobe Photoshop (Beta)$" manage=off
 yabai -m rule --add app="^console$" manage=off
 yabai -m rule --add app="^Malwarebytes$" manage=off

@@ -9,3 +9,4 @@ simple-update-notifier*
 old_*
 .env*
 *.pyc
+__*

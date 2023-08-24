@@ -7,8 +7,8 @@ import openai
 load_dotenv()
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
-repo_path = "~/.config/"
-repo = Repo(repo_path)
+current_path = os.getcwd()
+repo = Repo(current_path)
 
 
 def generate_message(diff: str) -> str:

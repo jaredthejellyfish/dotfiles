@@ -15,6 +15,7 @@ if [[ $CHARGING == "on" ]]; then
     icon="􀢋"
     label="$PERCENTAGE%"
     icon.color=0xffffffff
+    label.color=0xffffffff
   )
   sketchybar --set battery "${battery_icon[@]}"
   exit 0
@@ -46,6 +47,7 @@ battery_icon=(
   icon=$ICON
   label="$PERCENTAGE%"
   icon.color=$COLOR
+  label.color=$COLOR
 )
 
 sketchybar --set battery "${battery_icon[@]}"

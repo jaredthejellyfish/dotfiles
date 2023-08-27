@@ -60,5 +60,6 @@ yabai -m rule --add app="^iStat Menus.*$" manage=off
 yabai -m rule --add app="^Adobe Photoshop (Beta)$" manage=off
 yabai -m rule --add app="^console$" manage=off
 yabai -m rule --add app="^Malwarebytes$" manage=off
+yabai -m rule --add title="^Redux DevTools$" manage=off border=off
 
 echo "yabai configuration loaded.."

@@ -79,7 +79,7 @@ with open(os.path.expanduser("~/.config/skhd/skhdrc"), "r") as f:
     formatted_keybinds = []
     for bind in skhd_lines:
         keys = " + ".join(bind["keybind"])
-        formatted_keybinds.append("<kbd>{}</kbd> : {}".format(keys, bind["action"]))
+        formatted_keybinds.append("<kbd>{}</kbd> : {}<br />".format(keys, bind["action"]))
 
     keybinds = generate_keybinds_section(formatted_keybinds)
 

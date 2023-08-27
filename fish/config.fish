@@ -4,9 +4,7 @@ end
 
 function fish_greeting
     eval "$(/opt/homebrew/bin/brew shellenv)"
-    eval "$(rbenv init -)"
-    export NVM_DIR=~/.nvm
-    export PATH="$PATH:/Users/gerardhernandez/code/chromium/depot_tools"
+    nvm use 18.17.1
     neofetch
 end
 

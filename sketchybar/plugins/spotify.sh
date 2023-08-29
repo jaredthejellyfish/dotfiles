@@ -35,7 +35,7 @@ hover() {
 
 case "$SENDER" in
 "mouse.clicked")
-  osascript -e 'tell application "Spotify" to playpause'
+  osascript -e 'tell application "Spotify" to next track'
   ;;
 "mouse.entered")
    sketchybar -m --set spotify.anchor label.drawing=on blur_radius=90

@@ -9,7 +9,7 @@ wakatime=(
   label.padding_left=10
   icon=􀐱
   update_freq=5
-  click_script="open https://wakatime.com/dashboard"
+  click_script="$ITEM_DIR/wakatime/scripts/get_digital.sh ; open https://wakatime.com/dashboard"
 )
 
 sketchybar --add item wakatime right \

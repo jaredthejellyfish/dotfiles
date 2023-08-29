@@ -15,7 +15,6 @@ switch_anchor=(
   background.corner_radius=4
   background.height=25
   script="$ITEM_DIR/switch/scripts/switch_get_state.sh"
-  click_script="$ITEM_DIR/switch/scripts/switch_click.sh"
   padding_right=2
   update_freq=30
 )

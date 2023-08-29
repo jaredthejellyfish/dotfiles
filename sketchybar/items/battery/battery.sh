@@ -9,7 +9,6 @@ battery=(
   label.drawing=yes
   padding_right=10
   label.padding_left=8
-  click_script="sketchybar --set battery label.drawing=toggle"
 )
 
 sketchybar --add item battery right \
@@ -18,5 +17,3 @@ sketchybar --add item battery right \
   power_source_change \
   system_woke \
   mouse.clicked \
-  mouse.entered \
-  mouse.exited

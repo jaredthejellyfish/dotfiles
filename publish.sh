@@ -13,3 +13,4 @@ git push origin main
 
 yabai --restart-service
 skhd --reload
+brew services restart sketchybar

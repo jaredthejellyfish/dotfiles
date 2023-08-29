@@ -1,7 +1,7 @@
 #!/bin/bash
 
 wifi=(
-  padding_right=12
+  padding_right=14
   update_freq=5
   y_offset=-1
   script="$PLUGIN_DIR/wifi.sh"

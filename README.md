@@ -40,42 +40,34 @@ This repository is a treasure trove of customized configurations, scripts, and u
 
 ## Keybinds
 
-### Application Launch Keybinds
+### Application Launching Keybinds
 
 <kbd>alt + b</kbd> : Open Brave Browser<br />
 <kbd>alt + v</kbd> : Open Visual Studio Code<br />
 <kbd>alt + s</kbd> : Open Spotify<br />
 
-### Window Focus Keybinds
+### Window Navigation Keybinds
 
-#### Switch Focus
+#### Switching Focus
 
 <kbd>cmd + alt + p</kbd> : Switch focus to window below<br />
 <kbd>cmd + alt + o</kbd> : Switch focus to window above<br />
 <kbd>cmd + alt + ñ</kbd> : Switch focus to the most recently focused window<br />
 <kbd>cmd + alt + l</kbd> : Switch focus to window on the right<br />
 <kbd>cmd + alt + k</kbd> : Switch focus to window on the left<br />
-
-#### Switch Space
-
 <kbd>cmd + alt + ç</kbd> : Switch focus to next space<br />
 <kbd>cmd + alt + ´</kbd> : Switch focus to previous space<br />
 
-### Window Manipulation Keybinds
-
-#### Warp Window
+#### Window Manipulation
 
 <kbd>cmd + alt + h</kbd> : Warp focused window to the left<br />
 <kbd>cmd + alt + j</kbd> : Warp focused window to the bottom<br />
-
-#### Window Arrangement
-
 <kbd>cmd + alt + .</kbd> : Balance space windows<br />
 <kbd>cmd + alt + ,</kbd> : Mirror current space along the y-axis<br />
 <kbd>cmd + alt + m</kbd> : Rotate space 180 degrees and retain focused window<br />
 <kbd>cmd + alt + n</kbd> : Swap focused window with window under mouse<br />
 
-#### Window Sizing and Positioning
+### Window Layout Keybinds
 
 <kbd>cmd + alt + c</kbd> : Center window on screen and float it<br />
 <kbd>cmd + alt + f</kbd> : Toggle float on focused window<br />

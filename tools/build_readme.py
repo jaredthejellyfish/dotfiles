@@ -1,6 +1,6 @@
 import os
 import re
-import openai
+from openai import OpenAI
 from dotenv import load_dotenv
 from pprint import pprint
 
@@ -8,7 +8,7 @@ print = pprint
 
 load_dotenv()
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI()
 
 keymap = {
     "0x29": "ñ",
@@ -25,8 +25,8 @@ def generate_keybinds_section(keybinds: dict):
 
     prompt = f"## Keybinds\n\n{prompt}\n\n"
 
-    response = openai.ChatCompletion.create(
-        model="gpt-4",
+    response = client.chat.completions.create(
+        model="gpt-4-1106-preview",
         messages=[
             {
                 "role": "system",
@@ -79,7 +79,8 @@ with open(os.path.expanduser("~/.config/skhd/skhdrc"), "r") as f:
     formatted_keybinds = []
     for bind in skhd_lines:
         keys = " + ".join(bind["keybind"])
-        formatted_keybinds.append("<kbd>{}</kbd> : {}<br />".format(keys, bind["action"]))
+        formatted_keybinds.append(
+            "<kbd>{}</kbd> : {}<br />".format(keys, bind["action"]))
 
     keybinds = generate_keybinds_section(formatted_keybinds)
 

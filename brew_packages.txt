@@ -77,6 +77,7 @@ ncurses
 neofetch
 nettle
 node
+ollama
 oniguruma
 opencore-amr
 openexr
@@ -136,6 +137,7 @@ arc
 discord
 docker
 electron-fiddle
+gitkraken
 google-chrome
 grandperspective
 insomnia

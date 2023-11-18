@@ -2,27 +2,29 @@ from git import Repo
 import difflib
 from dotenv import load_dotenv
 import os
-import openai
+from openai import OpenAI
 
 load_dotenv()
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+
 current_path = os.getcwd()
 repo = Repo(current_path)
 
+client = OpenAI()
+
 
 def generate_message(diff: str) -> str:
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo-16k",
+    response = client.chat.completions.create(
+        model="gpt-4-1106-preview",
         messages=[
             {
                 "role": "system",
-                "content": "You are a helpful assistant. You receive a diff of the current git repo the user is working on and then share a commit message based on all the information in the git diff.",
+                "content": "You are a helpful assistant. You receive a diff of the current git repo the user is working on and then share a commit message based on all the information in the git diff."
             },
             {
                 "role": "user",
-                "content": f"Make sure to only include a well formatted commit message in your response:\n{diff}",
-            },
+                "content": f"Make sure to only include a well formatted commit message in your response:\n{diff}"
+            }
         ],
         temperature=0,
         max_tokens=2500,
@@ -41,14 +43,16 @@ def print_diff(repo):
     for diff_item in diff_index:
         if diff_item.change_type == "A":  # file added
             output.append(
-                "--------------- ADDED: {} ---------------".format(diff_item.a_path)
+                "--------------- ADDED: {} ---------------".format(
+                    diff_item.a_path)
             )
             b_blob_text = diff_item.b_blob.data_stream.read().decode("utf-8")
             output.append(b_blob_text)
             output.append("\n")
         elif diff_item.change_type == "M":  # file modified
             output.append(
-                "--------------- MODIFIED: {} ---------------".format(diff_item.a_path)
+                "--------------- MODIFIED: {} ---------------".format(
+                    diff_item.a_path)
             )
             a_blob_text = diff_item.a_blob.data_stream.read().decode("utf-8")
             b_blob_text = diff_item.b_blob.data_stream.read().decode("utf-8")
@@ -56,16 +60,19 @@ def print_diff(repo):
             output.append("\n")
         elif diff_item.change_type == "D":  # file deleted
             output.append(
-                "--------------- CREATED: {} ---------------".format(diff_item.a_path)
+                "--------------- CREATED: {} ---------------".format(
+                    diff_item.a_path)
             )
             a_blob_text = diff_item.a_blob.data_stream.read().decode("utf-8")
             output.append(a_blob_text)
             output.append("\n")
         else:
             output.append(
-                "--------------- UNKNOWN: {} ---------------".format(diff_item.a_path)
+                "--------------- UNKNOWN: {} ---------------".format(
+                    diff_item.a_path)
             )
-            output.append("Unknown change type {}".format(diff_item.change_type))
+            output.append("Unknown change type {}".format(
+                diff_item.change_type))
             output.append("\n")
 
     return "\n".join(output)
@@ -82,6 +89,6 @@ diff = print_diff(repo)
 message = generate_message(diff)
 
 if message.lower().find("Commit message".lower()) != -1:
-    message = message[message.lower().find("Commit message".lower()) + 16 :]
+    message = message[message.lower().find("Commit message".lower()) + 16:]
 
 print(message)

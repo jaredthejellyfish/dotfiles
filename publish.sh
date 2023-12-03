@@ -2,6 +2,8 @@
 
 python3 tools/build_readme.py
 
+brew list > brew_packages.txt
+
 git add .
 
 git stage .

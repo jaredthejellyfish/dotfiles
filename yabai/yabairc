@@ -63,3 +63,6 @@ yabai -m rule --add app="^Malwarebytes$" manage=off
 yabai -m rule --add title="Redux DevTools" manage=on border=off
 
 echo "yabai configuration loaded.."
+
+echo "loading borders.."
+borders active_color=0xffe45070 inactive_color=0x9D323232 hidpi=on

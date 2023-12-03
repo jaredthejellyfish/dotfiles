@@ -38,7 +38,7 @@ Welcome to my dotfiles repository! This is where I store and manage all my perso
 
 This repository is a treasure trove of customized configurations, scripts, and utilities that can help you optimize and personalize your computing experience. Feel free to explore and adapt these dotfiles to suit your preferences. Enjoy the enhanced functionality and efficiency they bring to your system!
 
-## Keybinds Categorization
+## Keybinds
 
 ### Application Launchers
 - <kbd>alt + b</kbd>: Open Brave Browser

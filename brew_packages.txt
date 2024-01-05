@@ -7,6 +7,7 @@ ca-certificates
 cairo
 cffi
 cjson
+cloudflared
 dav1d
 deno
 docker-completion
@@ -43,6 +44,7 @@ libass
 libb2
 libbluray
 libevent
+libgit2
 libidn
 libidn2
 libmicrohttpd
@@ -54,6 +56,7 @@ libsamplerate
 libsndfile
 libsodium
 libsoxr
+libssh2
 libtasn1
 libtiff
 libunibreak
@@ -94,9 +97,11 @@ pandoc
 pango
 pcre2
 pixman
+pkg-config
 pnpm
 postgresql@15
 pycparser
+pygit2
 python-attrs
 python-certifi
 python-charset-normalizer
@@ -151,6 +156,7 @@ zeromq
 zimg
 zstd
 arc
+cmake
 discord
 docker
 electron-fiddle

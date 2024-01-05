@@ -60,7 +60,9 @@ yabai -m rule --add app="^iStat Menus.*$" manage=off
 yabai -m rule --add app="^Adobe Photoshop (Beta)$" manage=off
 yabai -m rule --add app="^console$" manage=off
 yabai -m rule --add app="^Malwarebytes$" manage=off
-yabai -m rule --add title="Redux DevTools" manage=on border=off
+yabai -m rule --add title="^Redux DevTools$" manage=on border=off
+yabai -m rule --add title="^Riot Client$" manage=on border=off
+yabai -m rule --add title="^League of Legends$" manage=on border=off
 
 echo "yabai configuration loaded.."
 

@@ -8,6 +8,7 @@ cairo
 cffi
 cjson
 cloudflared
+cocoapods
 dav1d
 deno
 docker-completion
@@ -18,6 +19,7 @@ fontconfig
 freetype
 frei0r
 fribidi
+gcc
 gettext
 gh
 ghostscript
@@ -32,6 +34,7 @@ highway
 huggingface-cli
 icu4c
 imath
+isl
 jbig2dec
 jpeg-turbo
 jpeg-xl
@@ -48,6 +51,7 @@ libgit2
 libidn
 libidn2
 libmicrohttpd
+libmpc
 libnghttp2
 libogg
 libpng
@@ -58,6 +62,7 @@ libsodium
 libsoxr
 libssh2
 libtasn1
+libtermkey
 libtiff
 libunibreak
 libunistring
@@ -66,6 +71,7 @@ libvidstab
 libvmaf
 libvorbis
 libvpx
+libvterm
 libx11
 libxau
 libxcb
@@ -74,15 +80,20 @@ libxext
 libxrender
 libyaml
 little-cms2
+luajit
+luv
 lxc
 lz4
 lzo
 mas
 mbedtls
 mpdecimal
+mpfr
 mpg123
+msgpack
 ncurses
 neofetch
+neovim
 nettle
 node
 ollama
@@ -123,7 +134,9 @@ python@3.11
 pyyaml
 rav1e
 readline
+ripgrep
 rubberband
+ruby
 screenresolution
 sdl2
 six
@@ -141,7 +154,9 @@ svt-av1
 tesseract
 theora
 tree
+tree-sitter
 unbound
+unibilium
 vercel-cli
 wakeonlan
 webp

@@ -10,3 +10,4 @@ old_*
 .env*
 *.pyc
 __*
+configstore/

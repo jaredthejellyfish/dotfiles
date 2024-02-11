@@ -6,8 +6,6 @@ await $`brew list > brew_packages.txt`;
 
 await $`git add .`;
 
-await $`git stage .`;
-
 const commitMesage = await $`python3 ~/.config/tools/commit_msg.py`.text();
 await $`git commit -m ${commitMesage}`;
 

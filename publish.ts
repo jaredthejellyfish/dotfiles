@@ -89,7 +89,7 @@ try {
 const commitSpinner = ora("Committing changes").start();
 try {
   const commitStart = Date.now();
-  const res = await $`git commit -m ${commitMessage}`.quiet();
+  const res = await $`git commit -m ${commitMessage.replace("```", "")}`.quiet();
   if (res.exitCode === 0)
     commitSpinner.succeed(`Committed changes in ${Date.now() - commitStart}ms`);
   else commitSpinner.fail("Failed to commit changes");

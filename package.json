@@ -2,6 +2,9 @@
   "name": "dotfiles",
   "module": "publish.ts",
   "type": "module",
+  "scripts": {
+    "publish": "bun run publish.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/figlet": "^1.5.8",

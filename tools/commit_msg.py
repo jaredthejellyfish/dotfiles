@@ -19,7 +19,7 @@ def generate_message(diff: str) -> str:
         messages=[
             {
                 "role": "system",
-                "content": "You are a helpful assistant. You receive a diff of the current git repo the user is working on and then share a commit message based on all the information in the git diff."
+                "content": "You are a helpful assistant. You receive a diff of the current git repo the user is working on and then share a commit message based on all the information in the git diff. Keep your response short but ensure it is a well formatted commit message."
             },
             {
                 "role": "user",
@@ -27,7 +27,7 @@ def generate_message(diff: str) -> str:
             }
         ],
         temperature=0,
-        max_tokens=2500,
+        max_tokens=500,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0,

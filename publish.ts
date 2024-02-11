@@ -76,21 +76,59 @@ try {
   gitStatusSpinner.fail("Failed to check for changes to commit");
 }
 
+let commitMessage: string = "--no-commit-message-provided--";
+const commitMessageSpinner = ora("Generating commit message").start();
+try {
+  const commitMessageStart = Date.now();
+  commitMessage = await $`python3 tools/commit_msg.py`.text();
+  commitMessageSpinner.succeed(`Generated commit message in ${Date.now() - commitMessageStart}ms`);
+} catch (e) {
+  commitMessageSpinner.fail("Failed to generate commit message");
+}
+
 const commitSpinner = ora("Committing changes").start();
 try {
-  const commitMesage = await $`python3 tools/commit_msg.py`.text();
-  console.log(commitMesage);
-  console.log(commitMesage);
-  commitSpinner.succeed("Changes committed");
+  const commitStart = Date.now();
+  const res = await $`git commit -m ${commitMessage}`.quiet();
+  if (res.exitCode === 0)
+    commitSpinner.succeed(`Committed changes in ${Date.now() - commitStart}ms`);
+  else commitSpinner.fail("Failed to commit changes");
 } catch (e) {
   commitSpinner.fail("Failed to commit changes");
 }
-process.exit(0);
-const commitMesage = await $`python3 ~/.config/tools/commit_msg.py`.text();
-await $`git commit -m ${commitMesage}`;
 
-await $`git push origin main`;
+const pushSpinner = ora("Pushing changes").start();
+try {
+  const pushStart = Date.now();
+  const res = await $`git push origin main`.quiet();
+  if (res.exitCode === 0)
+    pushSpinner.succeed(`Pushed changes in ${Date.now() - pushStart}ms`);
+  else pushSpinner.fail("Failed to push changes");
+} catch (e) {
+  pushSpinner.fail("Failed to push changes");
+}
 
-await $`yabai --restart-service`;
-await $`skhd --reload`;
-await $`brew services restart sketchybar`;
+const restartSpinner = ora("Restarting services").start();
+try {
+  const restartStart = Date.now();
+  const yabaiRes = await $`yabai --restart-service`.quiet();
+  const skhdRes = await $`skhd --reload`.quiet();
+  const brewRes = await $`brew services restart sketchybar`.quiet();
+  if (
+    yabaiRes.exitCode === 0 &&
+    skhdRes.exitCode === 0 &&
+    brewRes.exitCode === 0
+  )
+    restartSpinner.succeed(
+      `Restarted services in ${Date.now() - restartStart}ms`
+    );
+  else restartSpinner.fail("Failed to restart services");
+} catch (e) {
+  restartSpinner.fail("Failed to restart services");
+}
+
+console.log("");
+console.log(chalk.blue(`Commit message:\n\n${commitMessage}`));
+console.log("");
+console.log(chalk.green(`✅ Done in ${Date.now() - start}ms`));
+console.log(chalk.green("🚀 dotfiles published successfully!"));

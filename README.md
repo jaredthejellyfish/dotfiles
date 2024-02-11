@@ -36,17 +36,18 @@ Welcome to my dotfiles repository! This is where I store and manage all my perso
 
   - **plugins:** Homemade SketchyBar plugins.
 
-This repository is a treasure trove of customized configurations, scripts, and utilities that can help you optimize and personalize your computing experience. Feel free to explore and adapt these dotfiles to suit your preferences. Enjoy the enhanced functionality and efficiency they bring to your system!
-
 ## Keybinds
 
 ### Application Launchers
+
 - <kbd>alt + b</kbd>: Open Brave Browser
 - <kbd>alt + v</kbd>: Open Visual Studio Code
 - <kbd>alt + s</kbd>: Open Spotify
 
 ### Window Management
+
 #### Focus
+
 - <kbd>cmd + alt + p</kbd>: Switch focus to window below
 - <kbd>cmd + alt + o</kbd>: Switch focus to window above
 - <kbd>cmd + alt + ñ</kbd>: Switch focus to the most recently focused window
@@ -56,22 +57,29 @@ This repository is a treasure trove of customized configurations, scripts, and u
 - <kbd>cmd + alt + ´</kbd>: Switch focus to previous space
 
 #### Window Positioning
+
 - <kbd>cmd + alt + h</kbd>: Warp focused window to the left
 - <kbd>cmd + alt + j</kbd>: Warp focused window to the bottom
 - <kbd>cmd + alt + c</kbd>: Center window on screen and float it
 
 #### Window Sizing
+
 - <kbd>cmd + alt + a</kbd>: Resize the currently focused window by 150px horizontally
 - <kbd>cmd + alt + w</kbd>: Set currently focused window ratio to 68% of screen width
 
 #### Space Management
+
 - <kbd>cmd + alt + .</kbd>: Balance space windows
 - <kbd>cmd + alt + ,</kbd>: Mirror current space along the y-axis
 - <kbd>cmd + alt + m</kbd>: Rotate space 180 degrees and retain focused window
 
 #### Window Behavior
+
 - <kbd>cmd + alt + f</kbd>: Toggle float on focused window
 - <kbd>cmd + alt + x</kbd>: Toggle padding and gap on current space
 
 #### Window Swapping
+
 - <kbd>cmd + alt + n</kbd>: Swap focused window with window under mouse
+
+This repository is a treasure trove of customized configurations, scripts, and utilities that can help you optimize and personalize your computing experience. Feel free to explore and adapt these dotfiles to suit your preferences. Enjoy the enhanced functionality and efficiency they bring to your system!

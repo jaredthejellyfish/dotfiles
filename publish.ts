@@ -33,7 +33,7 @@ const start = Date.now();
 const readmeSpinner = ora("Building README.md").start();
 try {
   const readmeBuildStart = Date.now();
-  const res = await $`python3 tools/build_readme.py`.quiet();
+  const res = await $`source venv/bin/activate && python3 tools/build_readme.py`.quiet();
   if (res.exitCode === 0)
     readmeSpinner.succeed(
       `Built README.md in ${Date.now() - readmeBuildStart}ms`
@@ -80,7 +80,7 @@ let commitMessage: string = "--no-commit-message-provided--";
 const commitMessageSpinner = ora("Generating commit message").start();
 try {
   const commitMessageStart = Date.now();
-  commitMessage = await $`python3 tools/commit_msg.py`.text();
+  commitMessage = await $`source venv/bin/activate && python3 tools/commit_msg.py`.text();
   commitMessageSpinner.succeed(`Generated commit message in ${Date.now() - commitMessageStart}ms`);
 } catch (e) {
   commitMessageSpinner.fail("Failed to generate commit message");

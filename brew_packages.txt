@@ -5,6 +5,7 @@ brotli
 c-ares
 ca-certificates
 cairo
+capstone
 cffi
 cfitsio
 cgif
@@ -12,10 +13,13 @@ cjson
 cloudflared
 cmake
 cocoapods
+colima
 dav1d
 deno
 docker
 docker-completion
+docker-compose
+dtc
 erlang
 fastlane
 ffmpeg
@@ -26,6 +30,7 @@ fontconfig
 freetype
 frei0r
 fribidi
+fzf
 gcc
 gdk-pixbuf
 gettext
@@ -87,6 +92,7 @@ libraw
 librist
 librsvg
 libsamplerate
+libslirp
 libsndfile
 libsodium
 libsoxr
@@ -114,6 +120,7 @@ libxext
 libxml2
 libxrender
 libyaml
+lima
 little-cms2
 luajit
 luv
@@ -184,6 +191,7 @@ python-urllib3
 python@3.11
 python@3.12
 pyyaml
+qemu
 rav1e
 readline
 ripgrep
@@ -202,6 +210,7 @@ speex
 sqlite
 squashfs
 srt
+supabase
 svt-av1
 tbb
 terminal-notifier
@@ -214,6 +223,7 @@ unbound
 unibilium
 unixodbc
 uthash
+vde
 vercel-cli
 vips
 wakeonlan
@@ -229,7 +239,9 @@ xz
 yabai
 zeromq
 zimg
+zoxide
 zstd
+android-platform-tools
 arc
 discord
 electron-fiddle
@@ -239,6 +251,7 @@ google-chrome
 grandperspective
 insomnia
 ngrok
+nordvpn
 spotify
 telegram
 visual-studio-code

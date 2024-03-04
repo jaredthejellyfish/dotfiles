@@ -25,3 +25,8 @@ cmd + alt - f: yabai -m window --toggle float; # Toggle float on focused window
 cmd + alt - x: yabai -m space --toggle padding ; yabai -m space --toggle gap # Toggle padding and gap on current space
 cmd + alt - w: sh ~/.config/skhd/helpers/resize_66.sh # Set currently focused window ratio to 68% of screen width
 cmd + alt - a: sh ~/.config/skhd/helpers/resize_horizontal.sh # Resize the currently focused window by 150px horizontally
+
+cmd + alt - 0x18: yabai -m window --space next # Move focused window to next space
+cmd + alt - 0x1B: yabai -m window --space prev # Move focused window to previous space
+cmd + alt + shift - 0x18: yabai -m window --space next ; yabai -m space --focus next # Move focused window to next space and switch spaces to it
+cmd + alt + shift - 0x1B: yabai -m window --space prev ; yabai -m space --focus prev  # Move focused window to previous space and switch spaces to it

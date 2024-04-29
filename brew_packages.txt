@@ -1,11 +1,14 @@
+aircrack-ng
 aom
 aribb24
+bettercap
 borders
 brotli
 c-ares
 ca-certificates
 cairo
 capstone
+certifi
 cffi
 cfitsio
 cgif
@@ -86,6 +89,7 @@ libmpc
 libnghttp2
 libogg
 libomp
+libpcap
 libpng
 libpq
 libraw
@@ -97,6 +101,7 @@ libsndfile
 libsodium
 libsoxr
 libspng
+libsql-server
 libssh
 libssh2
 libtasn1
@@ -141,6 +146,7 @@ neovim
 nettle
 node
 npth
+nsnake
 nspr
 nss
 numpy
@@ -160,6 +166,7 @@ orc
 p11-kit
 pandoc
 pango
+pcre
 pcre2
 pinentry
 pixman
@@ -219,6 +226,7 @@ theora
 transmission-cli
 tree
 tree-sitter
+turso
 unbound
 unibilium
 unixodbc
@@ -226,8 +234,11 @@ uthash
 vde
 vercel-cli
 vips
+vite
 wakeonlan
+watch
 webp
+wget
 wrangler
 wxwidgets
 x264
@@ -252,8 +263,10 @@ grandperspective
 insomnia
 ngrok
 nordvpn
+obsidian
 spotify
 telegram
 visual-studio-code
 warp
 whatsapp
+zoom

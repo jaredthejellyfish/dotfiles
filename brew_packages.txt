@@ -1,7 +1,9 @@
 aircrack-ng
 aom
 aribb24
+awscli
 bettercap
+blueutil
 borders
 brotli
 c-ares
@@ -24,6 +26,7 @@ docker-completion
 docker-compose
 dtc
 erlang
+expect
 fastlane
 ffmpeg
 fftw
@@ -127,12 +130,14 @@ libxrender
 libyaml
 lima
 little-cms2
+lsusb
 luajit
 luv
 lxc
 lz4
 lzo
 m4
+mad
 mas
 mbedtls
 mozjpeg
@@ -162,6 +167,7 @@ openslide
 openssl@3
 openvino
 opus
+opusfile
 orc
 p11-kit
 pandoc
@@ -213,13 +219,16 @@ skhd
 snap
 snapcraft
 snappy
+sox
 speex
 sqlite
 squashfs
 srt
+sst
 supabase
 svt-av1
 tbb
+tcl-tk
 terminal-notifier
 tesseract
 theora

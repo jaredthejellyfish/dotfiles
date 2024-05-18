@@ -16,3 +16,7 @@ for (const pack of packages) {
     }
     count++;
 }
+
+await $`brew cleanup`
+
+await $`brew doctor`

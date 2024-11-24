@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>build</key>
+	<string>1238</string>
+	<key>preferences</key>
+	<dict>
+		<key>Disks_MenubarItems</key>
+		<array>
+			<dict>
+				<key>boot</key>
+				<true/>
+				<key>key</key>
+				<string>551EB4E8-A8FB-46CB-8BE2-C0C7A3AF52FB</string>
+				<key>name</key>
+				<string>Macintosh HD</string>
+			</dict>
+		</array>
+		<key>InstalledHelpers-mas</key>
+		<true/>
+		<key>MenubarSkinColor-Dark</key>
+		<integer>8</integer>
+		<key>Migrated_6.0</key>
+		<true/>
+		<key>Migrated_6.22</key>
+		<true/>
+		<key>Migrated_6.5</key>
+		<true/>
+		<key>Migrated_6.52</key>
+		<true/>
+		<key>Migrated_6.60_ARM</key>
+		<true/>
+		<key>Migrated_WeatherProvider</key>
+		<true/>
+		<key>Sensors-Limits-Updated</key>
+		<true/>
+		<key>StatusItems-Order</key>
+		<array>
+			<integer>8</integer>
+			<integer>6</integer>
+		</array>
+		<key>Time_MenubarFormat</key>
+		<array>
+			<dict>
+				<key>format</key>
+				<array>
+					<array>
+						<string>EE</string>
+						<string>' '</string>
+						<string>HH</string>
+						<string>:</string>
+						<string>mm</string>
+					</array>
+				</array>
+			</dict>
+		</array>
+	</dict>
+	<key>version</key>
+	<string>6.73</string>
+</dict>
+</plist>

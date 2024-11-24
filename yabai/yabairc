@@ -1,0 +1,72 @@
+#!/usr/bin/env sh
+
+yabai -m signal --add event=dock_did_restart \
+  action="sudo yabai --load-sa" \
+  title="Inject yabai scripting addon."
+
+yabai -m signal --add event=application_front_switched \
+  action="bash ~/.config/yabai/helpers/arc_improver.sh"
+
+sudo yabai --load-sa
+
+# global settings
+yabai -m config mouse_follows_focus off
+yabai -m config focus_follows_mouse autoraise
+yabai -m config window_origin_display default
+yabai -m config window_placement second_child
+yabai -m config window_topmost off
+yabai -m config window_shadow on
+yabai -m config window_opacity off
+yabai -m config window_opacity_duration 0.9
+yabai -m config window_border on
+yabai -m config window_border_width 2
+yabai -m config normal_window_border_color 0x9D323232
+yabai -m config active_window_border_color 0xffe45070
+yabai -m config insert_feedback_color 0xffe45070
+yabai -m config split_ratio 0.5
+yabai -m config auto_balance on
+yabai -m config mouse_modifier alt
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
+yabai -m config mouse_drop_action swap
+yabai -m config window_animation_duration 0.0
+
+yabai -m config window_topmost off # Disabled because browser popups will disappear if its enabled
+yabai -m config window_shadow off
+
+# general space settings
+yabai -m config layout bsp
+yabai -m config top_padding 15
+yabai -m config bottom_padding 25
+yabai -m config left_padding 25
+yabai -m config right_padding 25
+yabai -m config window_gap 7
+
+# app specific settings:
+yabai -m rule --add app="Code" opacity=0.90
+yabai -m rule --add app="Warp" opacity=0.83
+
+# apps to not manage (ignore)
+yabai -m rule --add app="^Spotify$" manage=off sticky=off
+yabai -m rule --add app="^Simulator$" manage=off sticky=on
+yabai -m rule --add app="^System Settings$" sticky=on manage=off
+yabai -m rule --add app="Stats" sticky=on manage=off
+yabai -m rule --add app="Calculator" sticky=on manage=off
+yabai -m rule --add app="^Finder$" sticky=off manage=off
+yabai -m rule --add app="^Disk Utility$" sticky=on manage=off
+yabai -m rule --add app="^System Information$" sticky=on manage=off
+yabai -m rule --add app="^Activity Monitor$" sticky=on manage=off
+yabai -m rule --add app="^iStat Menus.*$" manage=off
+yabai -m rule --add app="^Adobe Photoshop (Beta)$" manage=off
+yabai -m rule --add app="^console$" manage=off
+yabai -m rule --add app="^Malwarebytes$" manage=off
+yabai -m rule --add title="^Redux DevTools$" manage=on border=off
+yabai -m rule --add title="^Riot Client$" manage=on border=off
+yabai -m rule --add title="^League of Legends$" manage=on border=off
+yabai -m rule --add title="^FaceTime$" manage=off border=off
+yabai -m rule --add title="^Screen Sharing$" manage=off border=off
+
+echo "yabai configuration loaded.."
+
+echo "loading borders.."
+borders active_color=0xffe45070 inactive_color=0x9D323232 hidpi=on

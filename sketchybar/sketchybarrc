@@ -1,0 +1,64 @@
+#!/bin/bash
+
+source "$CONFIG_DIR/colors.sh" # Loads all defined colors
+source "$CONFIG_DIR/icons.sh"  # Loads all defined icons
+
+ITEM_DIR="$CONFIG_DIR/items"     # Directory where the items are configured
+PLUGIN_DIR="$CONFIG_DIR/plugins" # Directory where all the plugin scripts are stored
+
+FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
+ICONS_FONT="Symbols Nerd Font" # Needs to have Regular variant
+
+# Get system menu bar height
+BAR_HEIGHT=$(osascript -e 'tell application "System Events" to get the size of the menu bar of the first process whose frontmost is true' | cut -d, -f2)
+
+# Setting up the general bar appearance of the bar
+bar=(
+  height=$(($BAR_HEIGHT + 3))
+  color=$TRANSPARENT
+  blur_radius=200
+  border_width=0
+  border_color=$BAR_BORDER_COLOR
+  shadow=off
+  position=top
+  sticky=on
+  padding_right=20
+  padding_left=20
+  y_offset=-4
+  margin=-2
+  topmost=window
+)
+
+sketchybar --bar "${bar[@]}"
+
+# Setting up default values
+defaults=(
+  updates=when_shown
+  blur_radius=20
+  icon.font="$FONT:Bold:14.0"
+  background.height=26
+  background.corner_radius=5
+  popup.background.corner_radius=5
+  popup.background.height=26
+  popup.background.border_color=$POPUP_BORDER_COLOR
+  popup.background.color=$POPUP_BACKGROUND_COLOR
+  popup.background.border_width=1
+  popup.blur_radius=20
+  popup.background.shadow.drawing=on
+)
+
+sketchybar --default "${defaults[@]}"
+
+# Setting up the items
+source "$ITEM_DIR/apple/apple.sh"
+source "$ITEM_DIR/front_app/front_app.sh"
+
+source "$ITEM_DIR/calendar/calendar.sh"
+source "$ITEM_DIR/battery/battery.sh"
+source "$ITEM_DIR/wifi.sh"
+source "$ITEM_DIR/wakatime/wakatime.sh"
+
+# Forcing all item scripts to run (never do this outside of sketchybarrc)
+sketchybar --update
+
+echo "sketchybar configuation loaded..."

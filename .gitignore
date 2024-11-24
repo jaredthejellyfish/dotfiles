@@ -1,0 +1,16 @@
+yarn*
+pudb*
+omf*
+gh*
+.DS_*
+old*
+dev*
+simple-update-notifier*
+old_*
+.env*
+*.pyc
+__*
+configstore/
+*.lockb
+node_modules/
+venv/

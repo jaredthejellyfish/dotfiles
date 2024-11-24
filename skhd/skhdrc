@@ -1,0 +1,34 @@
+
+alt - b: open -a "Brave Browser" -n # Open Brave Browser
+alt - v: osascript -e 'tell application "Visual Studio Code" to activate' # Open Visual Studio Code
+alt - s: osascript -e 'tell application "Spotify" to activate' # Open Spotify
+
+cmd + alt - p: yabai -m window --focus south # Switch focus to window below
+cmd + alt - o: yabai -m window --focus north # Switch focus to window above
+
+cmd + alt - 0x29: yabai -m window --focus recent # Switch focus to the most recently focused window
+cmd + alt - l: yabai -m window --focus east # Switch focus to window on the right
+cmd + alt - k: yabai -m window --focus west # Switch focus to window on the left
+cmd + alt - h: yabai -m window --warp west # Warp focused window to the left
+cmd + alt - j: yabai -m window --warp east # Warp focused window to the bottom
+
+cmd + alt - 0x2F: yabai -m space --balance # Balance space windows
+cmd + alt - 0x2B: yabai -m space --mirror y-axis # Mirror current space along the y-axis
+cmd + alt - m: sh ~/.config/skhd/helpers/rotate_clockwise.sh # Rotate space 180 degrees and retain focused window
+cmd + alt - n: yabai -m window --swap mouse # Swap focused window with window under mouse
+
+cmd + alt - 0x2A: yabai -m space --focus next # Switch focus to next space
+cmd + alt - 0x27: yabai -m space --focus prev # Switch focus to previous space
+
+cmd + alt - c: yabai -m window --toggle float; yabai -m window --grid 7:7:1:1:5:5 # Center window on screen and float it
+cmd + alt - f: yabai -m window --toggle float; # Toggle float on focused window
+cmd + alt - x: yabai -m space --toggle padding ; yabai -m space --toggle gap # Toggle padding and gap on current space
+cmd + alt - w: sh ~/.config/skhd/helpers/resize_66.sh # Set currently focused window ratio to 68% of screen width
+cmd + alt - a: sh ~/.config/skhd/helpers/resize_horizontal.sh # Resize the currently focused window by 150px horizontally
+
+cmd + alt - 0x18: yabai -m window --space next # Move focused window to next space
+cmd + alt - 0x1B: yabai -m window --space prev # Move focused window to previous space
+cmd + alt + shift - 0x18: yabai -m window --space next ; yabai -m space --focus next # Move focused window to next space and switch spaces to it
+cmd + alt + shift - 0x1B: yabai -m window --space prev ; yabai -m space --focus prev  # Move focused window to previous space and switch spaces to it
+
+cmd + alt - 0x2C: osascript -e 'tell application "System Events" to key code 126 using control down' # Launch mission control

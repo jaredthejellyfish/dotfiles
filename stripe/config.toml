@@ -1,0 +1,13 @@
+color = ''
+project-name = 'default'
+[default]
+account_id = 'acct_1Pwyhn2KfiTTRunB'
+device_name = 'mbp.local'
+display_name = 'AviatorJonah'
+live_mode_api_key = 'rk_live_***********************************************************************************************vUBe'
+live_mode_key_expires_at = '2025-05-06'
+live_mode_pub_key = 'pk_live_51Pwyhn2KfiTTRunBEF3VfEiwemGqfDgQoWZRqOdlwkjJ0XwjFpFzi6FB3MWuxMEpArIpJQZFpnDLr1dW5M9xGhoe005bIzFfmq'
+test_mode_api_key = 'rk_test_51Pwyhn2KfiTTRunBIsU37YQbk6tfiDyhNU8epa2RogNizMloFBl6ciulnexsips2IUGibMJEbAQZuxxXo7cnoQ6p00BeuqkDsA'
+test_mode_key_expires_at = '2025-05-06'
+test_mode_pub_key = 'pk_test_51Pwyhn2KfiTTRunBhTkruZ15jSGFyK7PO6nTk4gGbaHoXmB0qIWGlP9bDV72L6Bo1Rho6sGxd3qe5AWXEOMAgyOg00Pb1PaRfp'
+

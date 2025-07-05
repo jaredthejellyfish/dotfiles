@@ -14,3 +14,4 @@ configstore/
 *.lockb
 node_modules/
 venv/
+extensions/

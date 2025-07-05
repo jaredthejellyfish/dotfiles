@@ -32,3 +32,6 @@ cmd + alt + shift - 0x18: yabai -m window --space next ; yabai -m space --focus 
 cmd + alt + shift - 0x1B: yabai -m window --space prev ; yabai -m space --focus prev  # Move focused window to previous space and switch spaces to it
 
 cmd + alt - 0x2C: osascript -e 'tell application "System Events" to key code 126 using control down' # Launch mission control
+
+ctrl - left  : yabai -m space --focus prev
+ctrl - right : yabai -m space --focus next

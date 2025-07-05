@@ -23,3 +23,13 @@ source "$HOME/.cargo/env.fish"
 # Created by `pipx` on 2024-07-11 19:15:57
 set PATH $PATH /Users/gerardhernandez/.local/bin
 fish_add_path /Users/gerardhernandez/.spicetify
+
+
+set -x ANDROID_HOME ~/Library/Android/sdk
+set -x PATH $ANDROID_HOME/tools $PATH
+set -x PATH $ANDROID_HOME/tools/bin $PATH
+set -x PATH $ANDROID_HOME/platform-tools $PATH
+set -x PATH $ANDROID_HOME/cmdline-tools/latest/bin $PATH
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/jared/.lmstudio/bin
